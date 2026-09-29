@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Plum Heating Ltd — professional plumbing, heating and gas services throughout Sussex.">
+  <title>Plum Heating Ltd | Plumbing & Heating in Sussex</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+  <style>
+:root{
+  --ink:#17211c;
+  --muted:#69736d;
+  --line:#e4e9e5;
+  --paper:#ffffff;
+  --soft:#f5f7f5;
+  --green:#214d3c;
+  --green-2:#2f6650;
+  --lime:#c9df61;
+  --cream:#eef2e8;
+  --shadow:0 20px 60px rgba(25,42,32,.08);
+  --radius:24px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:"DM Sans",Arial,sans-serif;line-height:1.6}
+a{color:inherit;text-decoration:none}
+.container{width:min(1160px,calc(100% - 40px));margin:auto}
+.site-header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.94);backdrop-filter:blur(14px);border-bottom:1px solid rgba(228,233,229,.9)}
+.nav-wrap{min-height:78px;display:flex;align-items:center;gap:30px}
+.brand{display:flex;align-items:center;gap:11px;margin-right:auto}
+.brand strong{display:block;font:800 17px/1 "Manrope",sans-serif;letter-spacing:-.04em}
+.brand small{display:block;margin-top:4px;font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.brand-mark{width:34px;height:34px;border:2px solid var(--green);border-radius:10px;display:grid;grid-template-columns:repeat(3,1fr);gap:3px;padding:6px;transform:rotate(-6deg)}
+.brand-mark span{display:block;border-radius:2px;background:var(--green)}
+.brand-mark span:nth-child(2){height:65%;align-self:end;background:var(--lime)}
+.brand-mark span:nth-child(3){height:45%;align-self:end}
+.main-nav{display:flex;align-items:center;gap:28px;font-size:13px;font-weight:600}
+.main-nav a{color:#48534c;transition:.2s}
+.main-nav a:hover{color:var(--green)}
+.header-call{background:var(--green);color:#fff!important;padding:12px 17px;border-radius:999px;font-size:13px;font-weight:700;display:flex;gap:8px;align-items:center}
+.phone-icon{font-size:15px}
+.menu-toggle{display:none;border:0;background:none;padding:6px}
+.hero{padding:82px 0 70px;background:linear-gradient(180deg,#fff 0%,#fbfcfb 100%);overflow:hidden}
+.hero-grid{display:grid;grid-template-columns:1.04fr .96fr;gap:80px;align-items:center}
+.eyebrow{display:flex;align-items:center;gap:9px;color:var(--green);font-size:11px;font-weight:800;letter-spacing:.14em;text-transform:uppercase}
+.eyebrow>span{width:7px;height:7px;border-radius:50%;background:var(--lime);display:inline-block}
+.hero h1{font:800 clamp(44px,6vw,75px)/.98 "Manrope",sans-serif;letter-spacing:-.065em;margin:21px 0 25px;max-width:760px}
+.hero h1 em{font-style:normal;color:var(--green)}
+.hero-text{font-size:17px;max-width:590px;color:var(--muted);margin:0 0 30px}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap}
+.button{min-height:50px;padding:0 21px;border-radius:999px;display:inline-flex;align-items:center;justify-content:center;gap:14px;font-size:13px;font-weight:800;border:1px solid transparent;transition:.2s}
+.button span{font-size:17px}
+.button-dark{background:var(--green);color:#fff}
+.button-dark:hover{background:#173b2e;transform:translateY(-1px)}
+.button-light{background:#fff;border-color:var(--line)}
+.button-light:hover{border-color:#bfc9c2}
+.button-white{background:#fff;color:var(--green)}
+.button-outline-white{color:#fff;border-color:rgba(255,255,255,.4)}
+.trust-row{display:flex;gap:34px;margin-top:48px;padding-top:23px;border-top:1px solid var(--line)}
+.trust-row div{display:grid;gap:2px}
+.trust-row strong{font:800 20px/1 "Manrope",sans-serif}
+.trust-row span{font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:.08em}
+.hero-card{border-radius:30px;background:var(--soft);box-shadow:var(--shadow);overflow:hidden}
+.card-image{height:430px;position:relative;background:radial-gradient(circle at 75% 20%,#fff 0 8%,transparent 9%),linear-gradient(145deg,#edf2ed,#dfe7df)}
+.pipe-art{position:absolute;inset:0;overflow:hidden}
+.pipe{position:absolute;border:14px solid var(--green);border-radius:30px;opacity:.96}
+.pipe-a{width:270px;height:440px;right:95px;top:-80px;border-left-color:transparent;transform:rotate(13deg)}
+.pipe-b{width:360px;height:260px;left:55px;top:155px;border-bottom-color:transparent;transform:rotate(-7deg)}
+.pipe-c{width:140px;height:270px;left:110px;top:45px;border-right-color:transparent}
+.valve{position:absolute;width:80px;height:80px;border:11px solid var(--lime);border-radius:50%;right:98px;bottom:73px;box-shadow:0 0 0 10px rgba(201,223,97,.15)}
+.hero-card-bottom{background:#fff;padding:23px 25px;display:flex;align-items:center;justify-content:space-between}
+.hero-card-bottom strong{font-size:14px}
+.hero-card-bottom p{margin:3px 0 0;color:var(--muted);font-size:12px}
+.status-dot{display:inline-block;width:8px;height:8px;border-radius:50%;background:#5ea77e;margin-right:7px}
+.arrow-circle{width:42px;height:42px;border:1px solid var(--line);border-radius:50%;display:grid;place-items:center}
+.review-strip{background:var(--green);color:#fff}
+.review-strip-inner{min-height:70px;display:flex;align-items:center;gap:20px}
+.review-label{font-size:10px;letter-spacing:.14em;text-transform:uppercase;opacity:.65}
+.stars{letter-spacing:.14em;color:var(--lime);font-size:13px}
+.review-strip p{font-size:13px;margin:0}
+.review-strip a{margin-left:auto;font-size:12px;font-weight:800}
+.section{padding:105px 0}
+.section-heading{display:grid;grid-template-columns:1fr .8fr;gap:70px;align-items:end;margin-bottom:48px}
+.section-heading h2,.about-section h2,.contact-section h2,.dark-panel h2{font:800 clamp(34px,4.4vw,55px)/1.02 "Manrope",sans-serif;letter-spacing:-.055em;margin:15px 0 0}
+.section-heading>p{color:var(--muted);max-width:490px;margin:0}
+.service-grid{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.service-card{min-height:315px;padding:28px 25px;border-right:1px solid var(--line);display:flex;flex-direction:column}
+.service-card:last-child{border-right:0}
+.service-card.featured{background:var(--cream)}
+.service-icon{font-size:11px;color:var(--green);font-weight:800;letter-spacing:.1em;margin-bottom:auto}
+.service-card h3{font:800 25px/1.05 "Manrope",sans-serif;letter-spacing:-.04em;margin:0 0 12px}
+.service-card p{font-size:13px;color:var(--muted);margin:0 0 25px}
+.service-card a{font-size:12px;font-weight:800;margin-top:auto;color:var(--green)}
+.service-card a span{margin-left:7px}
+.split-section{padding:0 0 105px}
+.split-grid{display:grid;grid-template-columns:.9fr 1.1fr;min-height:590px}
+.dark-panel{background:var(--green);color:#fff;padding:60px;border-radius:28px 0 0 28px;display:flex;flex-direction:column;align-items:flex-start}
+.eyebrow-light{color:var(--lime)}
+.dark-panel h2{max-width:440px}
+.dark-panel p{color:rgba(255,255,255,.72);font-size:15px;max-width:420px;margin:25px 0 auto}
+.feature-list{border:1px solid var(--line);border-left:0;border-radius:0 28px 28px 0;padding:0 45px}
+.feature{display:grid;grid-template-columns:55px 1fr;gap:15px;padding:31px 0;border-bottom:1px solid var(--line)}
+.feature:last-child{border-bottom:0}
+.feature>span{font-size:11px;font-weight:800;color:#9aa59e}
+.feature h3{font:800 19px/1.1 "Manrope",sans-serif;margin:0 0 7px;letter-spacing:-.03em}
+.feature p{font-size:13px;color:var(--muted);margin:0;max-width:460px}
+.reviews-section{background:#f7f8f7}
+.reviews-heading{margin-bottom:42px}
+.rating-box{display:flex;justify-content:flex-end;align-items:center;gap:12px}
+.rating-box strong{font:800 48px/1 "Manrope",sans-serif;letter-spacing:-.06em}
+.rating-box span{font-size:10px;line-height:1.45;color:var(--muted);text-transform:uppercase;letter-spacing:.07em}
+.review-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.quote-card{background:#fff;border:1px solid var(--line);border-radius:20px;padding:30px;min-height:260px;display:flex;flex-direction:column}
+.quote-mark{font:800 42px/1 "Manrope",sans-serif;color:var(--green)}
+.quote-card p{font-size:14px;line-height:1.7;margin:15px 0 auto}
+.review-meta{padding-top:20px;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:15px;font-size:10px}
+.review-meta span{color:var(--muted)}
+.review-footer{display:flex;align-items:center;justify-content:space-between;margin-top:30px;font-size:11px}
+.review-footer div{display:flex;align-items:center;gap:10px}
+.review-footer .stars{font-size:12px}
+.review-footer strong{font-size:13px}
+.review-footer div span:last-child{color:var(--muted)}
+.text-link{font-weight:800;color:var(--green)}
+.about-section{padding:100px 0}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:100px}
+.about-grid>div:nth-child(2){padding-top:30px}
+.about-grid p{color:var(--muted);font-size:15px;max-width:560px}
+.about-facts{display:flex;gap:25px;margin-top:35px;padding-top:25px;border-top:1px solid var(--line)}
+.about-facts span{font-size:10px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
+.about-facts strong{display:block;color:var(--ink);font:800 19px "Manrope",sans-serif;text-transform:none;letter-spacing:-.03em}
+.contact-section{padding:0 0 100px}
+.contact-card{background:var(--green);border-radius:28px;color:#fff;padding:58px 65px;display:grid;grid-template-columns:1.3fr .7fr;gap:70px;align-items:center}
+.contact-card h2{max-width:610px}
+.contact-card p{color:rgba(255,255,255,.72);max-width:600px}
+.contact-actions{display:flex;flex-direction:column;align-items:flex-start;gap:10px}
+.contact-actions small{font-size:10px;color:rgba(255,255,255,.55);margin-top:5px}
+.site-footer{border-top:1px solid var(--line);padding:40px 0 25px}
+.footer-top{display:flex;align-items:center;gap:30px}
+.footer-brand{margin-right:auto}
+.footer-top>a:not(.brand){font-size:11px;font-weight:700;color:var(--muted)}
+.footer-note{display:grid;margin-right:20px}
+.footer-note strong{font-size:12px}
+.footer-note span{font-size:10px;color:var(--muted)}
+.footer-bottom{border-top:1px solid var(--line);margin-top:30px;padding-top:20px;display:flex;justify-content:space-between;color:#89918c;font-size:10px}
+.floating-call{display:none}
+@media(max-width:900px){
+  .main-nav{display:none}
+  .menu-toggle{display:flex;flex-direction:column;gap:4px}
+  .menu-toggle span{width:22px;height:2px;background:var(--ink)}
+  .main-nav.open{display:flex;position:absolute;top:78px;left:0;right:0;background:#fff;border-bottom:1px solid var(--line);padding:22px 20px;flex-direction:column;align-items:flex-start}
+  .header-call{display:none}
+  .hero-grid,.section-heading,.split-grid,.about-grid,.contact-card{grid-template-columns:1fr}
+  .hero-grid{gap:45px}
+  .service-grid{grid-template-columns:repeat(2,1fr)}
+  .service-card:nth-child(2){border-right:0}
+  .service-card:nth-child(-n+2){border-bottom:1px solid var(--line)}
+  .dark-panel{border-radius:28px 28px 0 0;min-height:430px}
+  .feature-list{border-left:1px solid var(--line);border-top:0;border-radius:0 0 28px 28px;padding:0 30px}
+  .review-grid{grid-template-columns:1fr}
+  .section-heading{gap:25px}
+  .contact-card{gap:35px}
+  .contact-actions{align-items:flex-start}
+  .footer-top{flex-wrap:wrap}
+  .footer-note{order:4;width:100%}
+}
+@media(max-width:600px){
+  .container{width:min(100% - 28px,1160px)}
+  .nav-wrap{min-height:70px}
+  .hero{padding:55px 0}
+  .hero h1{font-size:45px}
+  .hero-text{font-size:15px}
+  .trust-row{gap:18px;justify-content:space-between}
+  .trust-row strong{font-size:17px}
+  .trust-row span{font-size:8px}
+  .card-image{height:300px}
+  .pipe-a{right:10px}
+  .pipe-b{left:-80px}
+  .service-grid{grid-template-columns:1fr}
+  .service-card{border-right:0;border-bottom:1px solid var(--line)}
+  .service-card:last-child{border-bottom:0}
+  .section{padding:75px 0}
+  .dark-panel{padding:40px 28px}
+  .feature-list{padding:0 24px}
+  .rating-box{justify-content:flex-start}
+  .about-grid{gap:20px}
+  .contact-card{padding:40px 28px}
+  .footer-top{align-items:flex-start;flex-direction:column;gap:18px}
+  .footer-note{order:0}
+  .footer-bottom{flex-direction:column;gap:8px}
+  .floating-call{display:flex;position:fixed;bottom:15px;left:14px;right:14px;z-index:60;background:var(--green);color:#fff;border:2px solid #fff;box-shadow:0 12px 30px rgba(20,50,38,.28);height:54px;border-radius:999px;align-items:center;justify-content:center;gap:10px;font-size:13px}
+  .floating-call span{font-size:18px;color:var(--lime)}
+}
+
+</style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a class="brand" href="#top" aria-label="Plum Heating home">
+        <span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span></span>
+        <span>
+          <strong>Plum Heating</strong>
+          <small>Plumbing • Heating • Gas</small>
+        </span>
+      </a>
+
+      <button class="menu-toggle" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="main-nav" aria-label="Main navigation">
+        <a href="#services">Services</a>
+        <a href="#why-us">Why Plum</a>
+        <a href="#reviews">Reviews</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <a class="header-call" href="tel:01273000000">
+        <span class="phone-icon">☎</span>
+        Call us
+      </a>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <div class="eyebrow"><span></span> Trusted across Sussex since 2008</div>
+          <h1>Reliable plumbing & heating, <em>done properly.</em></h1>
+          <p class="hero-text">Professional domestic plumbing, heating and gas services from a local team known for clear communication, tidy work and dependable service.</p>
+
+          <div class="hero-actions">
+            <a class="button button-dark" href="mailto:info@plum-heating.co.uk">Request a quote <span>↗</span></a>
+            <a class="button button-light" href="#services">View services</a>
+          </div>
+
+          <div class="trust-row">
+            <div><strong>9.97/10</strong><span>Checkatrade rating</span></div>
+            <div><strong>16 yrs</strong><span>On Checkatrade</span></div>
+            <div><strong>2008</strong><span>Established</span></div>
+          </div>
+        </div>
+
+        <div class="hero-card">
+          <div class="card-image">
+            <div class="pipe-art" aria-hidden="true">
+              <div class="pipe pipe-a"></div>
+              <div class="pipe pipe-b"></div>
+              <div class="pipe pipe-c"></div>
+              <div class="valve"></div>
+            </div>
+          </div>
+          <div class="hero-card-bottom">
+            <div>
+              <span class="status-dot"></span>
+              <strong>Domestic specialists</strong>
+              <p>Plumbing, heating & gas</p>
+            </div>
+            <span class="arrow-circle">↗</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="review-strip">
+      <div class="container review-strip-inner">
+        <span class="review-label">What customers say</span>
+        <div class="stars">★★★★★</div>
+        <p>“Always on time, always do a good job.”</p>
+        <a href="#reviews">Read reviews →</a>
+      </div>
+    </section>
+
+    <section class="section" id="services">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <span class="eyebrow">What we do</span>
+            <h2>Practical solutions for your home.</h2>
+          </div>
+          <p>From a straightforward repair to a full bathroom or heating installation, our engineers handle domestic plumbing and heating work throughout Sussex.</p>
+        </div>
+
+        <div class="service-grid">
+          <article class="service-card featured">
+            <div class="service-icon">01</div>
+            <h3>Plumbing</h3>
+            <p>General plumbing installation, repairs, leak detection, bathrooms, kitchens and showers.</p>
+            <a href="#contact">Ask about plumbing <span>↗</span></a>
+          </article>
+          <article class="service-card">
+            <div class="service-icon">02</div>
+            <h3>Heating</h3>
+            <p>Boiler servicing, fault diagnosis, radiators, thermostatic valves and underfloor heating.</p>
+            <a href="#contact">Ask about heating <span>↗</span></a>
+          </article>
+          <article class="service-card">
+            <div class="service-icon">03</div>
+            <h3>Gas</h3>
+            <p>Gas safety inspections, appliance installation, gas fire servicing and boiler support.</p>
+            <a href="#contact">Ask about gas work <span>↗</span></a>
+          </article>
+          <article class="service-card">
+            <div class="service-icon">04</div>
+            <h3>Bathrooms</h3>
+            <p>Bathroom installations and plumbing work, planned around the practical needs of your home.</p>
+            <a href="#contact">Discuss your project <span>↗</span></a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="split-section" id="why-us">
+      <div class="container split-grid">
+        <div class="dark-panel">
+          <span class="eyebrow eyebrow-light">A local team you can rely on</span>
+          <h2>Professional work without the fuss.</h2>
+          <p>Customers regularly mention punctuality, clear communication, tidy workmanship and a helpful attitude. That's the standard we aim to keep on every job.</p>
+          <a class="button button-white" href="#reviews">See customer reviews <span>↗</span></a>
+        </div>
+        <div class="feature-list">
+          <div class="feature">
+            <span>01</span>
+            <div><h3>Qualified engineers</h3><p>Professional and courteous engineers carrying out domestic plumbing and heating work.</p></div>
+          </div>
+          <div class="feature">
+            <span>02</span>
+            <div><h3>Clear communication</h3><p>From booking through to completion, customers value responsive communication and straightforward service.</p></div>
+          </div>
+          <div class="feature">
+            <span>03</span>
+            <div><h3>Free quotations</h3><p>Tell us what you need and we'll help you understand the work before you commit.</p></div>
+          </div>
+          <div class="feature">
+            <span>04</span>
+            <div><h3>Sussex based</h3><p>Established in 2008 and providing plumbing, heating and gas services throughout Sussex.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section reviews-section" id="reviews">
+      <div class="container">
+        <div class="section-heading reviews-heading">
+          <div><span class="eyebrow">Customer feedback</span><h2>Trusted by local customers.</h2></div>
+          <div class="rating-box"><strong>9.97</strong><span>/10<br>Checkatrade<br>last 12 months</span></div>
+        </div>
+
+        <div class="review-grid">
+          <article class="quote-card">
+            <div class="quote-mark">“</div>
+            <p>Plum Heating are great. They remind me every year that my boiler needs servicing, book it in quickly and the work is thorough.</p>
+            <div class="review-meta"><strong>Verified customer</strong><span>General plumbing</span></div>
+          </article>
+          <article class="quote-card">
+            <div class="quote-mark">“</div>
+            <p>Very quick and easy to deal with. They arrived with the parts required, charged a fair price and left the job clean and tidy.</p>
+            <div class="review-meta"><strong>Verified customer</strong><span>Bathroom & kitchen plumbing</span></div>
+          </article>
+          <article class="quote-card">
+            <div class="quote-mark">“</div>
+            <p>Excellent job as always, reliable, friendly and helpful. Thanks Plum Heating!</p>
+            <div class="review-meta"><strong>Verified customer</strong><span>Bathroom & kitchen plumbing</span></div>
+          </article>
+        </div>
+
+        <div class="review-footer">
+          <div><span class="stars">★★★★★</span><strong>678 reviews</strong><span>on Checkatrade</span></div>
+          <a class="text-link" href="https://www.checkatrade.com/trades/plumheating/reviews" target="_blank" rel="noopener">Read all reviews ↗</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="about-section" id="about">
+      <div class="container about-grid">
+        <div>
+          <span class="eyebrow">About Plum Heating</span>
+          <h2>Established in 2008. Still focused on doing a good job.</h2>
+        </div>
+        <div>
+          <p>Plum Heating Ltd provides a full range of plumbing, heating and gas installation, maintenance and repair services throughout Sussex.</p>
+          <p>Our domestic engineers carry out everything from general plumbing and boiler work to gas safety inspections, bathroom installations and underfloor heating.</p>
+          <div class="about-facts">
+            <span><strong>2008</strong> Established</span>
+            <span><strong>Yes</strong> VAT registered</span>
+            <span><strong>Free</strong> Quotations</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact-section" id="contact">
+      <div class="container contact-card">
+        <div>
+          <span class="eyebrow eyebrow-light">Get in touch</span>
+          <h2>Need a plumber or heating engineer?</h2>
+          <p>Send us a few details about the work you need. We'll get back to you to discuss the job and arrange the next step.</p>
+        </div>
+        <div class="contact-actions">
+          <a class="button button-white" href="mailto:info@plum-heating.co.uk">Request a quote <span>↗</span></a>
+          <a class="button button-outline-white" href="tel:01273000000">Call Plum Heating</a>
+          <small>Free quotations • Domestic work</small>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-top">
+      <a class="brand footer-brand" href="#top">
+        <span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span></span>
+        <span><strong>Plum Heating</strong><small>Plumbing • Heating • Gas</small></span>
+      </a>
+      <div class="footer-note">
+        <strong>Brighton, East Sussex</strong>
+        <span>Serving Sussex since 2008</span>
+      </div>
+      <a href="https://www.facebook.com/PlumHeatingLtd/" target="_blank" rel="noopener">Facebook ↗</a>
+      <a href="http://plum-heating.co.uk/" target="_blank" rel="noopener">Website ↗</a>
+    </div>
+    <div class="container footer-bottom">
+      <span>© <span id="year"></span> Plum Heating Ltd. All rights reserved.</span>
+      <span>No out-of-hours or weekend call-out service.</span>
+    </div>
+  </footer>
+
+  <a class="floating-call" href="tel:01273000000" aria-label="Call Plum Heating">
+    <span>☎</span>
+    <strong>Call Plum Heating</strong>
+  </a>
+
+  <script>
+const menuToggle = document.querySelector(".menu-toggle");
+const nav = document.querySelector(".main-nav");
+
+menuToggle?.addEventListener("click", () => {
+  const open = nav.classList.toggle("open");
+  menuToggle.setAttribute("aria-expanded", open);
+});
+
+document.querySelectorAll(".main-nav a").forEach(link => {
+  link.addEventListener("click", () => {
+    nav.classList.remove("open");
+    menuToggle?.setAttribute("aria-expanded", "false");
+  });
+});
+
+document.getElementById("year").textContent = new Date().getFullYear();
+
+</script>
+</body>
+</html>
